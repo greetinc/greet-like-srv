@@ -2,6 +2,7 @@ package configs
 
 import (
 	"fmt"
+	"greet-like-srv/entity"
 	"log"
 	"os"
 	"time"
@@ -53,7 +54,7 @@ func InitDB() *gorm.DB {
 
 	// Migrate the schema
 	db.AutoMigrate(
-	// entity
+		&entity.LikeRelation{},
 	)
 
 	return db
